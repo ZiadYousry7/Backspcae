@@ -642,3 +642,9 @@ GROUP BY p.department;
 -- INSERT INTO storage.buckets (id, name, public) VALUES ('task-attachments', 'task-attachments', false);
 -- INSERT INTO storage.buckets (id, name, public) VALUES ('avatars', 'avatars', true);
 -- INSERT INTO storage.buckets (id, name, public) VALUES ('project-covers', 'project-covers', true);
+
+-- =============================================================
+-- ADD password_hash COLUMN for email/password login
+-- Run this after the main schema if you want email login support
+-- =============================================================
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS password_hash TEXT;
